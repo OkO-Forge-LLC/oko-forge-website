@@ -1,3 +1,5 @@
+import coverImg from "../assets/hammer.png";
+import "../css/Home.css";
 
 export default function About() {
     const team = [
@@ -11,6 +13,7 @@ export default function About() {
       realize and reach their potential in tech.`,
             linkedin: "https://www.linkedin.com/in/zakmward/",
             github: "https://github.com/zakward",
+            portfolio: "https://freelance-portfolio-z858.onrender.com/",
         },
         {
             name: 'Lawrence "Menoko OG" Jefferson II',
@@ -37,33 +40,36 @@ export default function About() {
     ];
 
     return (
-        <div className="bg-[#1A1A1A] text-white min-h-screen">
-            <div className="pt-24 px-6 md:px-32">
-                <h2 className="text-4xl font-bold text-[#FF8C00] mb-8">About Us</h2>
-                <p className="text-gray-300 leading-7 mb-6">
+        <div
+            className="coverImg-wrapper"
+            style={{ backgroundImage: `url(${coverImg})` }}
+        >
+            <div className="content-container text-white">
+                <h2 className="text-4xl font-bold text-[#FF8C00] mb-6 text-center">
+                    About Us
+                </h2>
+                <p className="text-gray-300 leading-7 mb-6 text-center">
                     At OkO-Forge, we specialize in modern full-stack technologies, crafting tailored solutions
-                    that meet your web development needs. From small businesses to large-scale projects, we’re
-                    here to deliver innovative and reliable websites and applications.
-                </p>
-                <p className="text-gray-300 leading-7 mb-6">
-                    Guided by our slogan, <strong>LAHA – Love All Humans Always</strong>, we believe in creating
-                    solutions that leave a lasting positive impact. We’re passionate about mentoring junior developers,
-                    inspiring the next generation of tech professionals.
+                    that meet your web development needs. Guided by our motto, <strong>LAHA – Love All Humans Always</strong>,
+                    we focus on mentorship, innovation, and delivering solutions that inspire.
                 </p>
 
-                {/* Team Section */}
-                <h3 className="text-3xl font-semibold text-[#00FFCC] mb-4">Meet the Team</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <h3 className="text-3xl font-semibold text-[#00FFCC] mb-4 text-center">
+                    Meet the Team
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {team.map((member, index) => (
                         <div
                             key={index}
-                            className="bg-gray-800 rounded-lg p-6 text-center shadow-lg hover:shadow-2xl transition-shadow"
+                            className="bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-lg p-6 text-center shadow-lg hover:shadow-2xl transition-shadow"
                         >
                             <h4 className="text-2xl font-semibold text-[#FF8C00] mb-2">
                                 {member.name}
                             </h4>
-                            <p className="text-gray-400 mb-4">{member.role}</p>
-                            <p className="text-gray-300 text-sm mb-4">{member.description}</p>
+                            <p className="text-gray-300 mb-4">{member.role}</p>
+                            <p className="text-gray-200 text-sm mb-4">
+                                {member.description}
+                            </p>
                             <div className="flex justify-center gap-4">
                                 <a
                                     href={member.github}

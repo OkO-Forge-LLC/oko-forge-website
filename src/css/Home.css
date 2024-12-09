@@ -1,16 +1,28 @@
+/* Global styles for scroll and responsiveness */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #1a1a1a;
+  color: white;
+}
+
 .coverImg-wrapper {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh; /* Allow content to scroll beyond viewport */
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
-  position: relative; /* Ensure positioning for pseudo-element */
-  overflow: hidden; /* Contain pseudo-element within the wrapper */
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
 .coverImg-wrapper::before {
@@ -20,42 +32,96 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Adjust the opacity as needed */
-  z-index: 1; /* Ensure it appears above the background but below content */
-  pointer-events: none; /* Prevent interaction with the pseudo-element */
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+  pointer-events: none;
 }
 
 .coverImg-wrapper * {
-  position: relative; /* Ensure child elements are above the shadow */
+  position: relative;
   z-index: 2;
 }
 
+/* Content items */
 .cover-items {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 0 20px; /* Ensure content doesn't touch screen edges */
+  padding: 0 20px;
 }
 
 .cover-items > h1 {
-  font-size: 32px; /* Default font size for smaller screens */
+  font-size: 36px; /* Default for mobile */
   line-height: 1.2;
+  color: #ff8c00;
 }
 
 .cover-items > p {
-  font-size: 18px; /* Default font size for smaller screens */
+  font-size: 18px;
+  color: #f3f3f3;
 }
 
-/* Responsive Adjustments */
+/* Semi-transparent card style */
+.card {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Input fields */
+.input-field {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f3f3f3;
+  padding: 0.75rem;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+  width: 100%;
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-field:focus {
+  border-color: #ff8c00;
+}
+
+/* Buttons */
+.button {
+  background-color: #ff8c00;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #ffd580; /* Lighter orange on hover */
+}
+
+/* Responsive adjustments */
 @media (min-width: 600px) {
   .cover-items > h1 {
     font-size: 40px;
   }
-
   .cover-items > p {
     font-size: 20px;
+  }
+  .card {
+    padding: 2rem;
   }
 }
 
@@ -63,7 +129,6 @@
   .cover-items > h1 {
     font-size: 48px;
   }
-
   .cover-items > p {
     font-size: 22px;
   }
@@ -73,8 +138,16 @@
   .cover-items > h1 {
     font-size: 54px;
   }
-
   .cover-items > p {
     font-size: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cover-items > h1 {
+    font-size: 60px;
+  }
+  .cover-items > p {
+    font-size: 26px;
   }
 }
