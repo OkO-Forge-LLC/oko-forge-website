@@ -4,7 +4,7 @@ import "../css/Home.css";
 export default function About() {
     const team = [
         {
-            name: "Zak Ward",
+            name: 'Zak "Oko-Kush" Ward',
             role: "JavaScript & TypeScript Full Stack Developer",
             description: `My greatest passion is helping others. Through my time as a professional firefighter, Army officer, 
       and business-owner, and most recently Web Development Sr. Instructor, I developed and honed my talents of leadership, 
@@ -27,7 +27,7 @@ export default function About() {
             portfolio: "https://ljefferson-menoko-site.netlify.app/",
         },
         {
-            name: "Jordan Burger",
+            name: 'Jordan "OkoGoblin" Burger',
             role: "JavaScript & TypeScript Full Stack Developer",
             description: `I am a dedicated web developer who thrives on problem-solving and continuous learning. With a passion for 
       backend development using Mongoose and Express, I have built and taught full stack MERN modules, sharing my knowledge 
