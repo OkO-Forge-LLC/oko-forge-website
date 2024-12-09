@@ -8,5 +8,9 @@
     font-size: 12px;
     padding-right: 40px;
    justify-content: end;
+    background-color: transparent !important;
+    position: absolute !important;
+    color: white;
+    z-index: 1000;
   }
 

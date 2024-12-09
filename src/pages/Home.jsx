@@ -9,7 +9,6 @@ const Home = () => {
       className="coverImg-wrapper"
       style={{ backgroundImage: `url(${coverImg})` }}
     >
-      <Header />
       <div className="cover-items">
         <h1 className="cover-text">OkO-Forge Development & Consulting</h1>
         <p className="cover-text">Solutions that WORK, Mentorship that INSPIRES!</p>
