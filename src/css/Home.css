@@ -12,6 +12,22 @@ body {
   color: white;
 }
 
+/* Default padding for mobile devices */
+@media (max-width: 767px) {
+  html,
+  body {
+    padding-top: 60px; /* Small gap for mobile under fixed header */
+  }
+}
+
+/* Remove padding for larger screens */
+@media (min-width: 768px) {
+  html,
+  body {
+    padding-top: 0; /* Content directly under header on large screens */
+  }
+}
+
 .coverImg-wrapper {
   min-height: 100vh; /* Allow content to scroll beyond viewport */
   width: 100%;
