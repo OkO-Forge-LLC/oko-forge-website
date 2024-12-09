@@ -1,0 +1,12 @@
+
+  .nav-items {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 100vw;
+    gap: 40px;
+    font-size: 12px;
+    padding-right: 40px;
+   justify-content: end;
+  }
+
