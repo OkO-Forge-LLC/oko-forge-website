@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 export default function Contact() {
     return (
         <div className="bg-[#1A1A1A] text-white min-h-screen">
-            <Navbar />
+
             <div className="pt-24 px-6 md:px-32">
                 <h2 className="text-4xl font-bold text-[#FF8C00] mb-6">Contact Us</h2>
                 <form

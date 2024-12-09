@@ -1,16 +1,58 @@
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 40px;
+  font-size: 14px;
+  padding: 10px 20px; /* Dynamic padding for better spacing */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Semi-transparent see-through background */
+  position: fixed; /* Keep the nav fixed at the top */
+  top: 0;
+  left: 0;
+  color: white;
+  z-index: 1000;
+  backdrop-filter: blur(
+    8px
+  ); /* Adds a subtle blur effect for better readability */
+}
 
+/* Link hover effects */
+.nav-items a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+  color: #ff8c00; /* Orange hover effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .nav-items {
-    display: flex;
-    align-items: center;
-    height: 10vh;
-    width: 100vw;
-    gap: 40px;
-    font-size: 12px;
-    padding-right: 40px;
-   justify-content: end;
-    background-color: transparent !important;
-    position: absolute !important;
-    color: white;
-    z-index: 1000;
+    gap: 20px; /* Reduce gap for smaller screens */
+    font-size: 12px; /* Decrease font size */
+    padding: 10px; /* Smaller padding */
   }
+}
 
+@media (max-width: 480px) {
+  .nav-items {
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+    padding: 10px 5px;
+    height: auto; /* Allow dynamic height */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); /* Slightly more opaque on smaller screens */
+  }
+}
