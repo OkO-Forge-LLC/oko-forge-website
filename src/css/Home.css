@@ -1,44 +1,39 @@
-/* Global styles for scroll and responsiveness */
+/* Global Reset */
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  font-family: "Rubik", sans-serif;
   line-height: 1.6;
-  background-color: #1a1a1a;
+  background-color: #0d0d0d;
   color: white;
 }
 
-/* Default padding for mobile devices */
-@media (max-width: 767px) {
-  html,
-  body {
-    padding-top: 60px; /* Small gap for mobile under fixed header */
-  }
-}
-
-/* Remove padding for larger screens */
-@media (min-width: 768px) {
-  html,
-  body {
-    padding-top: 0; /* Content directly under header on large screens */
-  }
-}
-
+/* Hero Section */
 .coverImg-wrapper {
-  min-height: 100vh; /* Allow content to scroll beyond viewport */
+  min-height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
+}
+.about-heading {
+  font-size: 3rem;
+  line-height: 1.2;
+  color: #d1b074;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #4b3f2f, 0 0 20px #8a6e3c;
+  font-family: "Cinzel Decorative", serif;
+  animation: pulseGlow 4s infinite ease-in-out;
 }
 
 .coverImg-wrapper::before {
@@ -48,122 +43,157 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.3)
+  );
   z-index: 1;
-  pointer-events: none;
 }
 
-.coverImg-wrapper * {
+.cover-items {
   position: relative;
   z-index: 2;
-}
-
-/* Content items */
-.cover-items {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
 }
 
 .cover-items > h1 {
-  font-size: 36px; /* Default for mobile */
+  font-size: 3rem;
   line-height: 1.2;
-  color: #ff8c00;
+  color: #d1b074;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #4b3f2f, 0 0 20px #8a6e3c;
+  font-family: "Cinzel Decorative", serif;
+  animation: pulseGlow 4s infinite ease-in-out;
 }
 
-.cover-items > p {
-  font-size: 18px;
+@keyframes pulseGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #4b3f2f, 0 0 20px #8a6e3c;
+  }
+  50% {
+    text-shadow: 0 0 15px #d1b074, 0 0 25px #ffb347;
+  }
+}
+
+/* Motto Card */
+.motto-card {
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(209, 176, 116, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  max-width: 600px;
+  backdrop-filter: blur(8px);
   color: #f3f3f3;
+  padding: 1.5rem;
+  border-radius: 8px;
 }
 
-/* Semi-transparent card style */
+/* Card */
 .card {
-  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.5rem;
+  background: rgba(15, 15, 15, 0.85);
+  border: 2px solid rgba(209, 176, 116, 0.5);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 0.3s ease-in-out;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-}
-
-/* Input fields */
-.input-field {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #f3f3f3;
-  padding: 0.75rem;
-  border-radius: 8px;
-  outline: none;
-  transition: border-color 0.3s ease-in-out;
-  width: 100%;
-}
-
-.input-field::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.input-field:focus {
-  border-color: #ff8c00;
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(209, 176, 116, 0.4);
+  border-color: #d1b074;
 }
 
 /* Buttons */
 .button {
-  background-color: #ff8c00;
+  background: linear-gradient(90deg, #8a6e3c, #d1b074);
   color: #1a1a1a;
-  padding: 10px 20px;
-  border-radius: 8px;
   font-weight: bold;
-  transition: background-color 0.3s ease-in-out;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease, transform 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: #ffd580; /* Lighter orange on hover */
+  background: linear-gradient(90deg, #d1b074, #8a6e3c);
+  color: white;
+  box-shadow: 0 4px 8px rgba(209, 176, 116, 0.5);
+  transform: scale(1.05);
 }
 
-/* Responsive adjustments */
-@media (min-width: 600px) {
+/* Input Fields */
+.input-field {
+  border: 1px solid #4b3f2f;
+  background: rgba(15, 15, 15, 0.5);
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: #f3f3f3;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-field::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-field:focus {
+  border-color: #d1b074;
+  box-shadow: 0 0 8px #d1b074;
+  transform: scale(1.02);
+}
+
+/* Team Section (About Us) */
+.team-card {
+  background: rgba(15, 15, 15, 0.85);
+  border: 1px solid rgba(209, 176, 116, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(209, 176, 116, 0.4);
+}
+
+.team-card img {
+  border: 2px solid #d1b074;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.team-links a {
+  color: #00ffcc;
+  transition: color 0.3s ease;
+}
+
+.team-links a:hover {
+  color: #ffb347;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
   .cover-items > h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
-  .cover-items > p {
-    font-size: 20px;
+
+  .motto-card p {
+    font-size: 1rem;
   }
-  .card {
-    padding: 2rem;
+
+  .card,
+  .team-card {
+    padding: 1.5rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
   .cover-items > h1 {
-    font-size: 48px;
+    font-size: 2rem;
   }
-  .cover-items > p {
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .cover-items > h1 {
-    font-size: 54px;
-  }
-  .cover-items > p {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .cover-items > h1 {
-    font-size: 60px;
-  }
-  .cover-items > p {
-    font-size: 26px;
+  .input-field {
+    padding: 0.6rem;
   }
 }

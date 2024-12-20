@@ -1,58 +1,102 @@
-.nav-items {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  gap: 40px;
-  font-size: 14px;
-  padding: 10px 20px; /* Dynamic padding for better spacing */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Semi-transparent see-through background */
-  position: fixed; /* Keep the nav fixed at the top */
+/* Navigation Container */
+.nav-container {
+  position: fixed;
   top: 0;
   left: 0;
-  color: white;
+  width: 100%;
+  background: rgba(
+    15,
+    15,
+    15,
+    0.85
+  ); /* Consistent dark translucent background */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
   z-index: 1000;
-  backdrop-filter: blur(
-    8px
-  ); /* Adds a subtle blur effect for better readability */
+  padding: 10px 20px;
+  font-family: "Cinzel Decorative", serif; /* Match the Home page font */
 }
 
-/* Link hover effects */
-.nav-items a {
-  color: white;
+/* Navigation Items */
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #d1b074; /* Golden tone for the logo */
+  text-shadow: 0 0 10px #4b3f2f, 0 0 15px #8a6e3c;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 15px #d1b074, 0 0 20px #ffb347;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: none; /* Hidden on smaller devices */
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(15, 15, 15, 0.9);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.nav-links a {
+  color: #d1b074; /* Golden text */
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: color 0.3s ease;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.nav-items a:hover {
-  color: #ff8c00; /* Orange hover effect */
+.nav-links a:hover {
+  color: #00ffcc; /* Teal on hover */
+  transform: scale(1.05);
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+/* Burger Menu */
+.burger-menu {
+  font-size: 2rem;
+  color: #d1b074; /* Golden burger icon */
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.burger-menu:hover {
+  color: #ffb347; /* Lighter gold on hover */
+  transform: rotate(90deg);
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
-  .nav-items {
-    gap: 20px; /* Reduce gap for smaller screens */
-    font-size: 12px; /* Decrease font size */
-    padding: 10px; /* Smaller padding */
+@media (min-width: 768px) {
+  .burger-menu {
+    display: none; /* Hide burger menu on larger devices */
   }
-}
 
-@media (max-width: 480px) {
-  .nav-items {
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px;
-    padding: 10px 5px;
-    height: auto; /* Allow dynamic height */
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.2
-    ); /* Slightly more opaque on smaller screens */
+  .nav-links {
+    display: flex; /* Show links in row on large screens */
+    gap: 20px;
+  }
+
+  .nav-links.open {
+    display: flex; /* Ensure it aligns properly */
   }
 }
