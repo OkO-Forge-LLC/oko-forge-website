@@ -1,0 +1,43 @@
+.coverImg-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  color: white;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #d1b074;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #4b3f2f, 0 0 30px #8a6e3c;
+  text-transform: uppercase;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  background: rgba(15, 15, 15, 0.75);
+  border: 1px solid rgba(209, 176, 116, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(209, 176, 116, 0.4);
+}

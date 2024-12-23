@@ -4,17 +4,27 @@ import "../css/Home.css";
 export default function Contact() {
     return (
         <div
-            className="coverImg-wrapper"
+            className="coverImg-wrapper mt-16"
             style={{ backgroundImage: `url(${coverImg})` }}
         >
-            <div className="cover-items px-4 sm:px-8">
-                <h2 className="text-4xl font-bold text-orange-500 mb-6 text-center">
+            <div className="cover-items text-center px-4">
+                {/* Page Title */}
+                <h2 className="leading-tight mb-4 text-[#d1b074] text-4xl font-semibold">
                     Contact Us
                 </h2>
+
+                {/* Motto Card */}
+                <div className="motto-card mx-auto mt-4 mb-8 p-4 rounded-lg shadow-lg">
+                    <p className="text-lg sm:text-xl text-gray-100 font-semibold italic">
+                        "We’d Love to Hear From You!"
+                    </p>
+                </div>
+
+                {/* Contact Form */}
                 <form
                     action="https://formsubmit.co/menokoog@gmail.com"
                     method="POST"
-                    className="space-y-6 w-full max-w-lg mx-auto card bg-black bg-opacity-60 p-6 rounded-lg"
+                    className="card mx-auto space-y-6 max-w-md p-6 rounded-lg shadow-lg"
                 >
                     <input
                         type="text"
