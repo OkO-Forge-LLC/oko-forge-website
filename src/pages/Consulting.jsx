@@ -4,22 +4,22 @@ import "../css/Home.css";
 export default function Consulting() {
     const cards = [
         {
-            title: "Strategic Planning",
-            content: "Navigate challenges with a clear roadmap to success.",
+            title: "Mentorship for Teams",
+            content: "Guiding development teams with hands-on mentoring and leadership.",
         },
         {
-            title: "Operational Execution",
-            content: "Efficient implementation of tailored strategies.",
+            title: "Junior Developer Growth",
+            content: "Empowering junior developers through training and real-world guidance.",
         },
         {
-            title: "Team Empowerment",
-            content: "Mentorship and guidance to inspire your team.",
+            title: "Collaborative Innovation",
+            content: "Working alongside your team to foster creativity and problem-solving.",
         },
     ];
 
     return (
         <div
-            className="coverImg-wrapper mt-16" // Ensures space below the fixed header
+            className="coverImg-wrapper mt-16"
             style={{ backgroundImage: `url(${coverImg})` }}
         >
             <div className="cover-items text-center px-4">
@@ -27,7 +27,7 @@ export default function Consulting() {
 
                 <div className="motto-card mx-auto mt-4 mb-8 p-4 rounded-lg shadow-lg">
                     <p className="text-lg sm:text-xl text-gray-100 font-semibold italic">
-                        "Guidance That Drives Innovation and Growth."
+                        "Inspiring developers, empowering teams."
                     </p>
                 </div>
 

@@ -5,23 +5,23 @@ export default function Development() {
     const cards = [
         {
             title: "Custom Solutions",
-            content: "Tailored web applications built to your specific needs.",
+            content: "Web applications crafted uniquely for you, blending creativity and functionality.",
         },
         {
             title: "Modern Tech Stack",
             content:
-                "Expertise in JavaScript, TypeScript, Python, React, Node.js, and more.",
+                "Leveraging cutting-edge technologies like JavaScript, TypeScript, Python, React, and Node.js.",
         },
         {
             title: "Scalable Designs",
             content:
-                "Future-proof applications that grow with your business needs.",
+                "Building adaptable solutions to grow with your ambitions and goals.",
         },
     ];
 
     return (
         <div
-            className="coverImg-wrapper mt-16" // Ensures space below the fixed header
+            className="coverImg-wrapper mt-16"
             style={{ backgroundImage: `url(${coverImg})` }}
         >
             <div className="cover-items text-center px-4">
@@ -29,7 +29,7 @@ export default function Development() {
 
                 <div className="motto-card mx-auto mt-4 mb-8 p-4 rounded-lg shadow-lg">
                     <p className="text-lg sm:text-xl text-gray-100 font-semibold italic">
-                        "Building Solutions That Stand the Test of Time."
+                        "Shaping the future, one line of code at a time."
                     </p>
                 </div>
 
